@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi API REST - Hola Mundo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">🚀 Mi API REST</div>
+        <span class="estado">● Servidor activo</span>
+    </header>
+
+    <main class="contenedor">
+
+        <div class="icono">🌎</div>
+
+        <h1>¡Hola Mundo! 👋</h1>
+
+        <p class="descripcion">
+            Bienvenido a mi primera API REST,
+            desarrollada con JavaScript,
+            Node.js y Express.
+        </p>
+
+        <div class="tecnologias">
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>Express</span>
+        </div>
+
+        <section class="tarjeta">
+
+            <h2>🔗 Prueba mi API REST</h2>
+
+            <p>
+                Método HTTP:
+                <strong class="metodo">GET</strong>
+            </p>
+
+            <p class="ruta">/api/hola</p>
+
+            <button onclick="probarAPI()">
+                ▶ Ejecutar API
+            </button>
+
+            <div class="resultado">
+                <h3>📄 Respuesta del servidor</h3>
+
+                <pre id="respuesta">
+Presiona el botón para probar la API...
+                </pre>
+
+                <p id="codigoEstado"></p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Proyecto académico - API REST Hola Mundo
+        <p>JavaScript | Node.js | Express</p>
+    </footer>
+
+    <script>
+        async function probarAPI() {
+            const respuesta = document.getElementById("respuesta");
+            const estado = document.getElementById("codigoEstado");
+
+            respuesta.textContent = "Consultando servidor...";
+            estado.textContent = "";
+
+            try {
+                const solicitud = await fetch("/api/hola");
+
+                const datos = await solicitud.json();
+
+                respuesta.textContent =
+                    JSON.stringify(datos, null, 2);
+
+                estado.textContent =
+                    "Estado HTTP: " + solicitud.status +
+                    (solicitud.ok ? " OK ✅" : " ⚠️");
+
+            } catch (error) {
+                respuesta.textContent =
+                    "Error al conectar con la API";
+
+                estado.textContent =
+                    "No se pudo completar la solicitud";
+            }
+        }
+    </script>
+
+</body>
+</html>

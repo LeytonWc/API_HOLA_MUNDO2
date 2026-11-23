@@ -1,0 +1,222 @@
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #080f1e, #152940, #102d35);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Barra superior */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.estado {
+    color: #4ade80;
+    font-size: 14px;
+}
+
+/* Contenido principal */
+.contenedor {
+    max-width: 850px;
+    margin: 65px auto;
+    padding: 20px;
+    text-align: center;
+    animation: aparecer 1s ease;
+}
+
+.icono {
+    font-size: 75px;
+    margin-bottom: 15px;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #4ade80, #22d3ee);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.descripcion {
+    color: #cbd5e1;
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Tecnologías */
+.tecnologias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.tecnologias span {
+    background: rgba(74, 222, 128, 0.12);
+    color: #86efac;
+    padding: 10px 20px;
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    border-radius: 25px;
+}
+
+/* Tarjeta principal */
+.tarjeta {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+}
+
+.tarjeta h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.tarjeta p {
+    margin-bottom: 15px;
+}
+
+.metodo {
+    color: #4ade80;
+}
+
+.ruta {
+    font-family: monospace;
+    color: #67e8f9;
+    font-size: 19px;
+}
+
+/* Botón */
+button {
+    background: linear-gradient(90deg, #16a34a, #0d9488);
+    color: white;
+    border: none;
+    padding: 16px 35px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 15px 0 25px;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+}
+
+/* Resultado JSON */
+.resultado {
+    background: #08111f;
+    border: 1px solid #284052;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+}
+
+.resultado h3 {
+    margin-bottom: 18px;
+    font-size: 17px;
+}
+
+pre {
+    color: #86efac;
+    font-size: 15px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#codigoEstado {
+    color: #4ade80;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    color: #94a3b8;
+    padding: 25px;
+    font-size: 14px;
+}
+
+footer p {
+    margin-top: 8px;
+}
+
+/* Animaciones */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .estado {
+        font-size: 12px;
+    }
+
+    .contenedor {
+        margin: 35px auto;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .descripcion {
+        font-size: 16px;
+    }
+
+    .tarjeta {
+        padding: 22px;
+    }
+}
